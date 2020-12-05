@@ -25,4 +25,5 @@ git remote add origin https://github.com/friendlyarm/friendlywrt.git
 git config core.sparsecheckout true
 echo "target/linux/rockchip-rk3399" >> .git/info/sparse-checkout
 git pull origin master-v19.07.4
+cd ..
 cp -R friendlywrt/target/linux/rockchip-rk3399 lede/target/linux/rockchip-rk3399
