@@ -21,7 +21,7 @@ cd ..
 mkdir -p friendlywrt
 cd friendlywrt
 git init
-git remote add orign https://github.com/friendlyarm/friendlywrt.git
+git remote add origin https://github.com/friendlyarm/friendlywrt.git
 git config core.sparsecheckout true
 echo "target/linux/rockchip-rk3399" >> .git/info/sparse-checkout
 git pull origin master-v19.07.4
