@@ -15,15 +15,3 @@ sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
 sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
-
-# clone friendlywrt
-cd ..
-mkdir -p friendlywrt
-cd friendlywrt
-git init
-git remote add origin https://github.com/friendlyarm/friendlywrt.git
-git config core.sparsecheckout true
-echo "target/linux/rockchip-rk3399" >> .git/info/sparse-checkout
-git pull origin master-v19.07.4
-cd ..
-mv friendlywrt/target/linux/rockchip-rk3399 lede/target/linux/rockchip-rk3399
