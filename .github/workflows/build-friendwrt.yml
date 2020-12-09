@@ -25,7 +25,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: .config
+  CONFIG_FILE: r4s_o_plus_l.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -85,6 +85,13 @@ jobs:
 
     - name: Install feeds
       run: cd friendlywrt-rk3399/friendlywrt && ./scripts/feeds install -a
+
+    - name: Load custom configuration
+      run: |
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE friendlywrt-rk3399/friendlywrt/.config
+        chmod +x $DIY_P2_SH
+        cd friendlywrt-rk3399/friendlywrt
+        $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: Compile packages
       run: |
