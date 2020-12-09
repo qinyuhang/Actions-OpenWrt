@@ -40,6 +40,9 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
+    - name: Checkout
+      uses: actions/checkout@main
+      
     - name: Install Repo
       run: |
         git clone https://github.com/friendlyarm/repo
