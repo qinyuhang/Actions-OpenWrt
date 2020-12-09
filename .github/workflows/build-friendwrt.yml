@@ -89,9 +89,7 @@ jobs:
     - name: Load custom configuration
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE friendlywrt-rk3399/friendlywrt/.config
-        chmod +x $DIY_P2_SH
         cd friendlywrt-rk3399/friendlywrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: Compile packages
       run: |
